@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAA4FB0E290FDFAC00C0A436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4FB0D290FDFAC00C0A436 /* AppDelegate.swift */; };
+		FAA4FB12290FDFAD00C0A436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA4FB11290FDFAD00C0A436 /* Assets.xcassets */; };
+		FAA4FB15290FDFAD00C0A436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA4FB13290FDFAD00C0A436 /* Main.storyboard */; };
+		FAFD85F729759E12000B439F /* HomeViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD85EA29759E12000B439F /* HomeViewInput.swift */; };
+		FAFD85F829759E12000B439F /* HomeInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD85EB29759E12000B439F /* HomeInteractorOutput.swift */; };
+		FAFD85F929759E12000B439F /* HomeModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD85EC29759E12000B439F /* HomeModuleOutput.swift */; };
+		FAFD85FA29759E12000B439F /* HomeRouterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD85ED29759E12000B439F /* HomeRouterOutput.swift */; };
+		FAFD85FB29759E12000B439F /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD85EE29759E12000B439F /* HomePresenter.swift */; };
+		FAFD85FC29759E12000B439F /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD85EF29759E12000B439F /* HomeRouter.swift */; };
+		FAFD85FD29759E12000B439F /* HomeInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD85F029759E12000B439F /* HomeInteractorInput.swift */; };
+		FAFD85FE29759E12000B439F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD85F129759E12000B439F /* HomeViewController.swift */; };
+		FAFD85FF29759E12000B439F /* HomeModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD85F229759E12000B439F /* HomeModuleInput.swift */; };
+		FAFD860029759E12000B439F /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD85F329759E12000B439F /* HomeInteractor.swift */; };
+		FAFD860129759E12000B439F /* HomeRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD85F429759E12000B439F /* HomeRouterInput.swift */; };
+		FAFD860229759E12000B439F /* HomeViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD85F529759E12000B439F /* HomeViewOutput.swift */; };
+		FAFD861029759E40000B439F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD860929759E40000B439F /* Logger.swift */; };
+		FAFD862029759E4C000B439F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD861529759E4C000B439F /* BaseViewController.swift */; };
+		FAFD862129759E4C000B439F /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD861729759E4C000B439F /* BasePresenter.swift */; };
+		FAFD862229759E4C000B439F /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD861929759E4C000B439F /* BaseInteractor.swift */; };
+		FAFD862529759E4C000B439F /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD861D29759E4C000B439F /* BaseRouter.swift */; };
+		FAFD86282975A0BC000B439F /* HomeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD86272975A0BC000B439F /* HomeWireframe.swift */; };
+		FAFD862A2975A0D5000B439F /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD86292975A0D5000B439F /* BaseWireframe.swift */; };
+		FAFD86332975A2A6000B439F /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAFD86322975A2A6000B439F /* Home.storyboard */; };
+		FAFD86362975A6C9000B439F /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD86342975A6C9000B439F /* MainWindowController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FAA4FB0A290FDFAC00C0A436 /* ScanAR macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScanAR macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA4FB0D290FDFAC00C0A436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAA4FB11290FDFAD00C0A436 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAA4FB14290FDFAD00C0A436 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FAA4FB16290FDFAD00C0A436 /* ScanAR_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ScanAR_macOS.entitlements; sourceTree = "<group>"; };
+		FAFD85EA29759E12000B439F /* HomeViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewInput.swift; sourceTree = "<group>"; };
+		FAFD85EB29759E12000B439F /* HomeInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorOutput.swift; sourceTree = "<group>"; };
+		FAFD85EC29759E12000B439F /* HomeModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModuleOutput.swift; sourceTree = "<group>"; };
+		FAFD85ED29759E12000B439F /* HomeRouterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterOutput.swift; sourceTree = "<group>"; };
+		FAFD85EE29759E12000B439F /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		FAFD85EF29759E12000B439F /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		FAFD85F029759E12000B439F /* HomeInteractorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorInput.swift; sourceTree = "<group>"; };
+		FAFD85F129759E12000B439F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FAFD85F229759E12000B439F /* HomeModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModuleInput.swift; sourceTree = "<group>"; };
+		FAFD85F329759E12000B439F /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		FAFD85F429759E12000B439F /* HomeRouterInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouterInput.swift; sourceTree = "<group>"; };
+		FAFD85F529759E12000B439F /* HomeViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewOutput.swift; sourceTree = "<group>"; };
+		FAFD860929759E40000B439F /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		FAFD861529759E4C000B439F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FAFD861729759E4C000B439F /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		FAFD861929759E4C000B439F /* BaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
+		FAFD861D29759E4C000B439F /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		FAFD86272975A0BC000B439F /* HomeWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWireframe.swift; sourceTree = "<group>"; };
+		FAFD86292975A0D5000B439F /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
+		FAFD86322975A2A6000B439F /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		FAFD86342975A6C9000B439F /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAA4FB07290FDFAC00C0A436 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAA4FB01290FDFAC00C0A436 = {
+			isa = PBXGroup;
+			children = (
+				FAA4FB0C290FDFAC00C0A436 /* ScanAR macOS */,
+				FAA4FB0B290FDFAC00C0A436 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAA4FB0B290FDFAC00C0A436 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAA4FB0A290FDFAC00C0A436 /* ScanAR macOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAA4FB0C290FDFAC00C0A436 /* ScanAR macOS */ = {
+			isa = PBXGroup;
+			children = (
+				FAA4FB16290FDFAD00C0A436 /* ScanAR_macOS.entitlements */,
+				FAA4FB0D290FDFAC00C0A436 /* AppDelegate.swift */,
+				FAFD85E929759DE6000B439F /* Assets */,
+				FAFD85E829759D76000B439F /* Common */,
+				FAFD860429759E29000B439F /* Content */,
+			);
+			path = "ScanAR macOS";
+			sourceTree = "<group>";
+		};
+		FAFD85E729759D6E000B439F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD86322975A2A6000B439F /* Home.storyboard */,
+				FAFD862C2975A12C000B439F /* View */,
+				FAFD862D2975A132000B439F /* Interactor */,
+				FAFD862F2975A13F000B439F /* Presenter */,
+				FAFD86302975A145000B439F /* Router */,
+				FAFD86312975A14B000B439F /* Wireframe */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		FAFD85E829759D76000B439F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD860529759E35000B439F /* Base */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FAFD85E929759DE6000B439F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FAA4FB11290FDFAD00C0A436 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FAFD860429759E29000B439F /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				FAA4FB13290FDFAD00C0A436 /* Main.storyboard */,
+				FAFD86342975A6C9000B439F /* MainWindowController.swift */,
+				FAFD85E729759D6E000B439F /* Home */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		FAFD860529759E35000B439F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD861829759E4C000B439F /* BaseInteractor */,
+				FAFD861629759E4C000B439F /* BasePresenter */,
+				FAFD861C29759E4C000B439F /* BaseRouter */,
+				FAFD861429759E4C000B439F /* BaseViewController */,
+				FAFD862B2975A0D9000B439F /* BaseWireframe */,
+				FAFD860929759E40000B439F /* Logger.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FAFD861429759E4C000B439F /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD861529759E4C000B439F /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		FAFD861629759E4C000B439F /* BasePresenter */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD861729759E4C000B439F /* BasePresenter.swift */,
+			);
+			path = BasePresenter;
+			sourceTree = "<group>";
+		};
+		FAFD861829759E4C000B439F /* BaseInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD861929759E4C000B439F /* BaseInteractor.swift */,
+			);
+			path = BaseInteractor;
+			sourceTree = "<group>";
+		};
+		FAFD861C29759E4C000B439F /* BaseRouter */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD861D29759E4C000B439F /* BaseRouter.swift */,
+			);
+			path = BaseRouter;
+			sourceTree = "<group>";
+		};
+		FAFD862B2975A0D9000B439F /* BaseWireframe */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD86292975A0D5000B439F /* BaseWireframe.swift */,
+			);
+			path = BaseWireframe;
+			sourceTree = "<group>";
+		};
+		FAFD862C2975A12C000B439F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD85EA29759E12000B439F /* HomeViewInput.swift */,
+				FAFD85F129759E12000B439F /* HomeViewController.swift */,
+				FAFD85F529759E12000B439F /* HomeViewOutput.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAFD862D2975A132000B439F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD85EB29759E12000B439F /* HomeInteractorOutput.swift */,
+				FAFD85F029759E12000B439F /* HomeInteractorInput.swift */,
+				FAFD85F329759E12000B439F /* HomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FAFD862F2975A13F000B439F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD85EC29759E12000B439F /* HomeModuleOutput.swift */,
+				FAFD85EE29759E12000B439F /* HomePresenter.swift */,
+				FAFD85F229759E12000B439F /* HomeModuleInput.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FAFD86302975A145000B439F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD85ED29759E12000B439F /* HomeRouterOutput.swift */,
+				FAFD85EF29759E12000B439F /* HomeRouter.swift */,
+				FAFD85F429759E12000B439F /* HomeRouterInput.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		FAFD86312975A14B000B439F /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD86272975A0BC000B439F /* HomeWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAA4FB09290FDFAC00C0A436 /* ScanAR macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAA4FB19290FDFAD00C0A436 /* Build configuration list for PBXNativeTarget "ScanAR macOS" */;
+			buildPhases = (
+				FAA4FB06290FDFAC00C0A436 /* Sources */,
+				FAA4FB07290FDFAC00C0A436 /* Frameworks */,
+				FAA4FB08290FDFAC00C0A436 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ScanAR macOS";
+			productName = "ScanAR macOS";
+			productReference = FAA4FB0A290FDFAC00C0A436 /* ScanAR macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAA4FB02290FDFAC00C0A436 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					FAA4FB09290FDFAC00C0A436 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = FAA4FB05290FDFAC00C0A436 /* Build configuration list for PBXProject "ScanAR macOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAA4FB01290FDFAC00C0A436;
+			productRefGroup = FAA4FB0B290FDFAC00C0A436 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAA4FB09290FDFAC00C0A436 /* ScanAR macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAA4FB08290FDFAC00C0A436 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA4FB12290FDFAD00C0A436 /* Assets.xcassets in Resources */,
+				FAA4FB15290FDFAD00C0A436 /* Main.storyboard in Resources */,
+				FAFD86332975A2A6000B439F /* Home.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAA4FB06290FDFAC00C0A436 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAFD85FB29759E12000B439F /* HomePresenter.swift in Sources */,
+				FAFD862229759E4C000B439F /* BaseInteractor.swift in Sources */,
+				FAFD862529759E4C000B439F /* BaseRouter.swift in Sources */,
+				FAA4FB0E290FDFAC00C0A436 /* AppDelegate.swift in Sources */,
+				FAFD860029759E12000B439F /* HomeInteractor.swift in Sources */,
+				FAFD85F929759E12000B439F /* HomeModuleOutput.swift in Sources */,
+				FAFD862029759E4C000B439F /* BaseViewController.swift in Sources */,
+				FAFD85F829759E12000B439F /* HomeInteractorOutput.swift in Sources */,
+				FAFD86362975A6C9000B439F /* MainWindowController.swift in Sources */,
+				FAFD860229759E12000B439F /* HomeViewOutput.swift in Sources */,
+				FAFD85FF29759E12000B439F /* HomeModuleInput.swift in Sources */,
+				FAFD862129759E4C000B439F /* BasePresenter.swift in Sources */,
+				FAFD861029759E40000B439F /* Logger.swift in Sources */,
+				FAFD860129759E12000B439F /* HomeRouterInput.swift in Sources */,
+				FAFD85FE29759E12000B439F /* HomeViewController.swift in Sources */,
+				FAFD85FC29759E12000B439F /* HomeRouter.swift in Sources */,
+				FAFD86282975A0BC000B439F /* HomeWireframe.swift in Sources */,
+				FAFD85FD29759E12000B439F /* HomeInteractorInput.swift in Sources */,
+				FAFD85FA29759E12000B439F /* HomeRouterOutput.swift in Sources */,
+				FAFD85F729759E12000B439F /* HomeViewInput.swift in Sources */,
+				FAFD862A2975A0D5000B439F /* BaseWireframe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FAA4FB13290FDFAD00C0A436 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAA4FB14290FDFAD00C0A436 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAA4FB17290FDFAD00C0A436 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAA4FB18290FDFAD00C0A436 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		FAA4FB1A290FDFAD00C0A436 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ScanAR macOS/ScanAR_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 839QV4DU65;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ScanAR;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tomark.scanAR.mac.ScanAR-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FAA4FB1B290FDFAD00C0A436 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "ScanAR macOS/ScanAR_macOS.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 839QV4DU65;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = ScanAR;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "tomark.scanAR.mac.ScanAR-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAA4FB05290FDFAC00C0A436 /* Build configuration list for PBXProject "ScanAR macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAA4FB17290FDFAD00C0A436 /* Debug */,
+				FAA4FB18290FDFAD00C0A436 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAA4FB19290FDFAD00C0A436 /* Build configuration list for PBXNativeTarget "ScanAR macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAA4FB1A290FDFAD00C0A436 /* Debug */,
+				FAA4FB1B290FDFAD00C0A436 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAA4FB02290FDFAC00C0A436 /* Project object */;
+}
