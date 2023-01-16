@@ -18,6 +18,7 @@ final class HomeViewController: NSViewController {
     @IBOutlet weak var lowRadioButton: NSButton!
     @IBOutlet weak var mediumRadioButton: NSButton!
     @IBOutlet weak var highRadioButton: NSButton!
+    @IBOutlet weak var selectDirectoryButton: NSButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,10 @@ final class HomeViewController: NSViewController {
 }
 
 extension HomeViewController: HomeViewInput {
+    
+    func setText(string: String) {
+        changeMainText(string)
+    }
 
 }
 
@@ -34,23 +39,27 @@ private extension HomeViewController {
     @IBAction func didChangeRadioButtonValue(_ sender: NSButton) {
         switch sender {
         case previewRadioButton:
-            printRadioButton("preview")
+            changeMainText("preview")
             
         case lowRadioButton:
-            printRadioButton("low")
+            changeMainText("low")
             
         case mediumRadioButton:
-            printRadioButton("medium")
+            changeMainText("medium")
             
         case highRadioButton:
-            printRadioButton("high")
+            changeMainText("high")
             
         default:
             break
         }
     }
     
-    func printRadioButton(_ text: String) {
+    @IBAction func didTapOnSelectDirectoryButton(_ sender: Any) {
+        output.onOpenDirectoryTap()
+    }
+    
+    func changeMainText(_ text: String) {
         self.label.stringValue = text
     }
     

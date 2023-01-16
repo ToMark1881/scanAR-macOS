@@ -7,5 +7,5 @@
 //
 
 protocol HomeViewInput: BaseViewControllerProtocol {
-    
+    func setText(string: String)
 }

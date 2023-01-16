@@ -73,6 +73,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA897A5D2975DC23006F3A59 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		FAA4FB01290FDFAC00C0A436 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				FAFD86322975A2A6000B439F /* Home.storyboard */,
+				FA897A5D2975DC23006F3A59 /* Entities */,
 				FAFD862C2975A12C000B439F /* View */,
 				FAFD862D2975A132000B439F /* Interactor */,
 				FAFD862F2975A13F000B439F /* Presenter */,

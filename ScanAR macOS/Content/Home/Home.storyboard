@@ -22,7 +22,7 @@
                                 </textFieldCell>
                             </textField>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="7uC-ux-b7X" userLabel="Radio Buttons Parent View">
-                                <rect key="frame" x="40" y="312" width="73" height="88"/>
+                                <rect key="frame" x="264" y="236" width="73" height="88"/>
                                 <subviews>
                                     <stackView distribution="equalSpacing" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmD-ug-Hh7">
                                         <rect key="frame" x="0.0" y="0.0" width="73" height="88"/>
@@ -89,12 +89,24 @@
                                     <constraint firstItem="dmD-ug-Hh7" firstAttribute="leading" secondItem="7uC-ux-b7X" secondAttribute="leading" id="xY9-51-5tX"/>
                                 </constraints>
                             </customView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ek2-vw-9gS">
+                                <rect key="frame" x="236" y="14" width="129" height="40"/>
+                                <buttonCell key="cell" type="push" title="Select directory" bezelStyle="rounded" alignment="center" controlSize="large" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MFG-jJ-vdL">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="didTapOnSelectDirectoryButton:" target="bU7-R8-ocO" id="4Ij-1S-IAK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="7uC-ux-b7X" firstAttribute="leading" secondItem="tOy-S4-hL0" secondAttribute="leading" constant="40" id="gir-wD-WhZ"/>
+                            <constraint firstItem="Q2s-G5-Xq1" firstAttribute="top" secondItem="7uC-ux-b7X" secondAttribute="bottom" constant="8" symbolic="YES" id="Ep9-KQ-728"/>
+                            <constraint firstItem="7uC-ux-b7X" firstAttribute="centerX" secondItem="tOy-S4-hL0" secondAttribute="centerX" id="JD7-nW-En0"/>
+                            <constraint firstItem="Ek2-vw-9gS" firstAttribute="centerX" secondItem="tOy-S4-hL0" secondAttribute="centerX" id="gXs-dP-5Ob"/>
                             <constraint firstItem="Q2s-G5-Xq1" firstAttribute="centerX" secondItem="tOy-S4-hL0" secondAttribute="centerX" id="m8X-kx-BNI"/>
                             <constraint firstItem="Q2s-G5-Xq1" firstAttribute="centerY" secondItem="tOy-S4-hL0" secondAttribute="centerY" id="nMg-ie-oUv"/>
-                            <constraint firstItem="7uC-ux-b7X" firstAttribute="top" secondItem="tOy-S4-hL0" secondAttribute="top" constant="40" id="r2v-GZ-616"/>
+                            <constraint firstAttribute="bottom" secondItem="Ek2-vw-9gS" secondAttribute="bottom" constant="20" symbolic="YES" id="ofS-20-nig"/>
                         </constraints>
                     </view>
                     <connections>
@@ -103,6 +115,7 @@
                         <outlet property="lowRadioButton" destination="rqE-sz-YyU" id="Qba-Aj-Unv"/>
                         <outlet property="mediumRadioButton" destination="YMH-4g-scY" id="E4v-Aj-gtk"/>
                         <outlet property="previewRadioButton" destination="TOA-vc-6gQ" id="9rf-ma-ccs"/>
+                        <outlet property="selectDirectoryButton" destination="Ek2-vw-9gS" id="bmk-Md-mhV"/>
                     </connections>
                 </viewController>
                 <customObject id="9uD-mB-xHs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

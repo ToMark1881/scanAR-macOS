@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 final class HomePresenter: BasePresenter {
     
@@ -26,6 +27,10 @@ extension HomePresenter: HomeModuleInput {
 // MARK: - View - Presenter
 extension HomePresenter: HomeViewOutput {
     
+    func onOpenDirectoryTap() {
+        presentSelectDirectoryDialog()
+    }
+    
 }
 
 // MARK: - Interactor - Presenter
@@ -35,5 +40,31 @@ extension HomePresenter: HomeInteractorOutput {
 
 // MARK: - Router - Presenter
 extension HomePresenter: HomeRouterOutput {
+    
+}
+
+private extension HomePresenter {
+    
+    func presentSelectDirectoryDialog() {
+        let dialog = NSOpenPanel()
+        dialog.title = "Choose directory with photos"
+        dialog.showsResizeIndicator = true
+        dialog.showsHiddenFiles = false
+        dialog.canChooseFiles = false
+        dialog.canChooseDirectories = true
+        
+        switch dialog.runModal() {
+        case NSApplication.ModalResponse.OK:
+            guard let result = dialog.url else {
+                return
+            }
+            
+            let path = result.path()
+            view.setText(string: path)
+            
+        default:
+            break
+        }
+    }
     
 }
