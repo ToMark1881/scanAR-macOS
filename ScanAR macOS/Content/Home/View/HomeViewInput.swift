@@ -8,4 +8,5 @@
 
 protocol HomeViewInput: BaseViewControllerProtocol {
     func setText(string: String)
+    func setup(with configuration: HomeViewConfiguration)
 }

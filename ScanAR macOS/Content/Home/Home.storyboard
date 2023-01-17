@@ -10,106 +10,156 @@
             <objects>
                 <viewController title="Home" storyboardIdentifier="HomeViewController" id="bU7-R8-ocO" customClass="HomeViewController" customModule="ScanAR_macOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="tOy-S4-hL0">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="440"/>
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
+                            <box horizontalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="wGV-KG-9HM">
+                                <rect key="frame" x="238" y="20" width="5" height="560"/>
+                            </box>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="X6D-gR-INp">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="600"/>
+                                <subviews>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="a1t-tG-bX6" customClass="DragAndDropView" customModule="ScanAR_macOS" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="352" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="8GF-db-lQQ"/>
+                                            <constraint firstAttribute="height" constant="200" id="h8s-jE-YNM"/>
+                                        </constraints>
+                                    </customView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ek2-vw-9gS">
+                                        <rect key="frame" x="56" y="286" width="129" height="40"/>
+                                        <buttonCell key="cell" type="push" title="Select directory" bezelStyle="rounded" alignment="center" controlSize="large" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MFG-jJ-vdL">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="didTapOnSelectDirectoryButton:" target="bU7-R8-ocO" id="4Ij-1S-IAK"/>
+                                        </connections>
+                                    </button>
+                                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="7uC-ux-b7X" userLabel="Radio Buttons Parent View">
+                                        <rect key="frame" x="84" y="20" width="73" height="88"/>
+                                        <subviews>
+                                            <stackView distribution="equalSpacing" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmD-ug-Hh7">
+                                                <rect key="frame" x="0.0" y="0.0" width="73" height="88"/>
+                                                <subviews>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TOA-vc-6gQ">
+                                                        <rect key="frame" x="-2" y="71" width="74" height="18"/>
+                                                        <buttonCell key="cell" type="radio" title="Preview" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="mST-Kz-UWZ">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="didChangeRadioButtonValue:" target="bU7-R8-ocO" id="qTw-AG-1FS"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rqE-sz-YyU">
+                                                        <rect key="frame" x="-2" y="47" width="51" height="18"/>
+                                                        <buttonCell key="cell" type="radio" title="Low" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="9Yt-X6-m7X">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="didChangeRadioButtonValue:" target="bU7-R8-ocO" id="chK-gl-M5P"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YMH-4g-scY">
+                                                        <rect key="frame" x="-2" y="23" width="75" height="18"/>
+                                                        <buttonCell key="cell" type="radio" title="Medium" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="fJF-Oz-lRa">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="didChangeRadioButtonValue:" target="bU7-R8-ocO" id="CVA-WT-ZsK"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0XA-fx-2jS">
+                                                        <rect key="frame" x="-2" y="-1" width="55" height="18"/>
+                                                        <buttonCell key="cell" type="radio" title="High" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="HAc-SA-3f7">
+                                                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="didChangeRadioButtonValue:" target="bU7-R8-ocO" id="2lQ-v7-V2V"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <visibilityPriorities>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                    <integer value="1000"/>
+                                                </visibilityPriorities>
+                                                <customSpacing>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                    <real value="3.4028234663852886e+38"/>
+                                                </customSpacing>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="dmD-ug-Hh7" secondAttribute="bottom" id="NYe-Eq-7Ny"/>
+                                            <constraint firstItem="dmD-ug-Hh7" firstAttribute="top" secondItem="7uC-ux-b7X" secondAttribute="top" id="aeD-uf-kZp"/>
+                                            <constraint firstAttribute="trailing" secondItem="dmD-ug-Hh7" secondAttribute="trailing" id="urC-RR-hgi"/>
+                                            <constraint firstItem="dmD-ug-Hh7" firstAttribute="leading" secondItem="7uC-ux-b7X" secondAttribute="leading" id="xY9-51-5tX"/>
+                                        </constraints>
+                                    </customView>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1iT-hY-8Fq">
+                                        <rect key="frame" x="107" y="328" width="27" height="16"/>
+                                        <textFieldCell key="cell" controlSize="large" lineBreakMode="clipping" alignment="center" title="OR" id="aNb-7H-3cq">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MkE-ru-rvc">
+                                        <rect key="frame" x="18" y="564" width="204" height="16"/>
+                                        <textFieldCell key="cell" controlSize="large" lineBreakMode="clipping" title="Please select folder with photos:" id="MUT-UJ-9OA">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="a1t-tG-bX6" firstAttribute="leading" secondItem="X6D-gR-INp" secondAttribute="leading" constant="20" id="4Ak-c5-DNn"/>
+                                    <constraint firstItem="1iT-hY-8Fq" firstAttribute="top" secondItem="a1t-tG-bX6" secondAttribute="bottom" constant="8" id="D2c-lT-DsK"/>
+                                    <constraint firstAttribute="trailing" secondItem="a1t-tG-bX6" secondAttribute="trailing" constant="20" id="K0D-1f-HEc"/>
+                                    <constraint firstItem="Ek2-vw-9gS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="X6D-gR-INp" secondAttribute="leading" constant="12" id="KSc-1k-wDQ"/>
+                                    <constraint firstItem="MkE-ru-rvc" firstAttribute="leading" secondItem="a1t-tG-bX6" secondAttribute="leading" id="Mtd-yA-Sds"/>
+                                    <constraint firstItem="MkE-ru-rvc" firstAttribute="top" secondItem="X6D-gR-INp" secondAttribute="top" constant="20" id="Qe0-zf-QFP"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ek2-vw-9gS" secondAttribute="trailing" constant="12" id="bZ4-9G-8GC"/>
+                                    <constraint firstItem="MkE-ru-rvc" firstAttribute="trailing" secondItem="a1t-tG-bX6" secondAttribute="trailing" id="cA7-zY-Eht"/>
+                                    <constraint firstItem="Ek2-vw-9gS" firstAttribute="centerX" secondItem="X6D-gR-INp" secondAttribute="centerX" id="dCG-Gw-bQd"/>
+                                    <constraint firstAttribute="bottom" secondItem="7uC-ux-b7X" secondAttribute="bottom" constant="20" symbolic="YES" id="h1w-J3-J5j"/>
+                                    <constraint firstItem="Ek2-vw-9gS" firstAttribute="top" secondItem="1iT-hY-8Fq" secondAttribute="bottom" constant="8" id="kRG-4p-d3j"/>
+                                    <constraint firstItem="1iT-hY-8Fq" firstAttribute="centerX" secondItem="X6D-gR-INp" secondAttribute="centerX" id="rnZ-zm-6CD"/>
+                                    <constraint firstItem="a1t-tG-bX6" firstAttribute="top" secondItem="MkE-ru-rvc" secondAttribute="bottom" constant="12" id="vMh-Rr-mBn"/>
+                                    <constraint firstItem="7uC-ux-b7X" firstAttribute="centerX" secondItem="X6D-gR-INp" secondAttribute="centerX" id="wP4-vV-Vrq"/>
+                                </constraints>
+                            </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q2s-G5-Xq1">
-                                <rect key="frame" x="255" y="212" width="90" height="16"/>
+                                <rect key="frame" x="257" y="292" width="90" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Hello, ScanAR" placeholderString="Text placeholder" id="v8h-Js-HeF">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="7uC-ux-b7X" userLabel="Radio Buttons Parent View">
-                                <rect key="frame" x="264" y="236" width="73" height="88"/>
-                                <subviews>
-                                    <stackView distribution="equalSpacing" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmD-ug-Hh7">
-                                        <rect key="frame" x="0.0" y="0.0" width="73" height="88"/>
-                                        <subviews>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TOA-vc-6gQ">
-                                                <rect key="frame" x="-2" y="71" width="74" height="18"/>
-                                                <buttonCell key="cell" type="radio" title="Preview" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="mST-Kz-UWZ">
-                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="didChangeRadioButtonValue:" target="bU7-R8-ocO" id="qTw-AG-1FS"/>
-                                                </connections>
-                                            </button>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rqE-sz-YyU">
-                                                <rect key="frame" x="-2" y="47" width="51" height="18"/>
-                                                <buttonCell key="cell" type="radio" title="Low" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="9Yt-X6-m7X">
-                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="didChangeRadioButtonValue:" target="bU7-R8-ocO" id="chK-gl-M5P"/>
-                                                </connections>
-                                            </button>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="YMH-4g-scY">
-                                                <rect key="frame" x="-2" y="23" width="75" height="18"/>
-                                                <buttonCell key="cell" type="radio" title="Medium" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="fJF-Oz-lRa">
-                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="didChangeRadioButtonValue:" target="bU7-R8-ocO" id="CVA-WT-ZsK"/>
-                                                </connections>
-                                            </button>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0XA-fx-2jS">
-                                                <rect key="frame" x="-2" y="-1" width="55" height="18"/>
-                                                <buttonCell key="cell" type="radio" title="High" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="HAc-SA-3f7">
-                                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="didChangeRadioButtonValue:" target="bU7-R8-ocO" id="2lQ-v7-V2V"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <visibilityPriorities>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                            <integer value="1000"/>
-                                        </visibilityPriorities>
-                                        <customSpacing>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                            <real value="3.4028234663852886e+38"/>
-                                        </customSpacing>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="dmD-ug-Hh7" secondAttribute="bottom" id="NYe-Eq-7Ny"/>
-                                    <constraint firstItem="dmD-ug-Hh7" firstAttribute="top" secondItem="7uC-ux-b7X" secondAttribute="top" id="aeD-uf-kZp"/>
-                                    <constraint firstAttribute="trailing" secondItem="dmD-ug-Hh7" secondAttribute="trailing" id="urC-RR-hgi"/>
-                                    <constraint firstItem="dmD-ug-Hh7" firstAttribute="leading" secondItem="7uC-ux-b7X" secondAttribute="leading" id="xY9-51-5tX"/>
-                                </constraints>
-                            </customView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ek2-vw-9gS">
-                                <rect key="frame" x="236" y="14" width="129" height="40"/>
-                                <buttonCell key="cell" type="push" title="Select directory" bezelStyle="rounded" alignment="center" controlSize="large" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MFG-jJ-vdL">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="didTapOnSelectDirectoryButton:" target="bU7-R8-ocO" id="4Ij-1S-IAK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Q2s-G5-Xq1" firstAttribute="top" secondItem="7uC-ux-b7X" secondAttribute="bottom" constant="8" symbolic="YES" id="Ep9-KQ-728"/>
-                            <constraint firstItem="7uC-ux-b7X" firstAttribute="centerX" secondItem="tOy-S4-hL0" secondAttribute="centerX" id="JD7-nW-En0"/>
-                            <constraint firstItem="Ek2-vw-9gS" firstAttribute="centerX" secondItem="tOy-S4-hL0" secondAttribute="centerX" id="gXs-dP-5Ob"/>
-                            <constraint firstItem="Q2s-G5-Xq1" firstAttribute="centerX" secondItem="tOy-S4-hL0" secondAttribute="centerX" id="m8X-kx-BNI"/>
-                            <constraint firstItem="Q2s-G5-Xq1" firstAttribute="centerY" secondItem="tOy-S4-hL0" secondAttribute="centerY" id="nMg-ie-oUv"/>
-                            <constraint firstAttribute="bottom" secondItem="Ek2-vw-9gS" secondAttribute="bottom" constant="20" symbolic="YES" id="ofS-20-nig"/>
+                            <constraint firstItem="X6D-gR-INp" firstAttribute="top" secondItem="tOy-S4-hL0" secondAttribute="top" id="Vdc-me-nye"/>
+                            <constraint firstItem="wGV-KG-9HM" firstAttribute="leading" secondItem="X6D-gR-INp" secondAttribute="trailing" id="cEb-OR-846"/>
+                            <constraint firstItem="Q2s-G5-Xq1" firstAttribute="leading" secondItem="wGV-KG-9HM" secondAttribute="trailing" constant="18" id="iJf-ow-kzt"/>
+                            <constraint firstAttribute="bottom" secondItem="X6D-gR-INp" secondAttribute="bottom" id="mnn-V6-ifm"/>
+                            <constraint firstItem="X6D-gR-INp" firstAttribute="leading" secondItem="tOy-S4-hL0" secondAttribute="leading" id="pkf-jq-fCX"/>
+                            <constraint firstAttribute="bottom" secondItem="wGV-KG-9HM" secondAttribute="bottom" constant="20" id="wWf-E1-bQd"/>
+                            <constraint firstItem="Q2s-G5-Xq1" firstAttribute="centerY" secondItem="tOy-S4-hL0" secondAttribute="centerY" id="wsC-K2-Fjg"/>
+                            <constraint firstItem="wGV-KG-9HM" firstAttribute="top" secondItem="tOy-S4-hL0" secondAttribute="top" constant="20" id="zJd-u2-nLZ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dragAndDropView" destination="a1t-tG-bX6" id="h6I-rd-bQY"/>
                         <outlet property="highRadioButton" destination="0XA-fx-2jS" id="Wwe-Wk-0ye"/>
                         <outlet property="label" destination="Q2s-G5-Xq1" id="6db-Oc-7Yv"/>
                         <outlet property="lowRadioButton" destination="rqE-sz-YyU" id="Qba-Aj-Unv"/>

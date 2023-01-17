@@ -17,6 +17,8 @@ final class HomePresenter: BasePresenter {
     
     weak var moduleOutput: HomeModuleOutput?
     
+    private var selectedFolderURL: URL?
+    
 }
 
 // MARK: - Module Input
@@ -26,6 +28,12 @@ extension HomePresenter: HomeModuleInput {
 
 // MARK: - View - Presenter
 extension HomePresenter: HomeViewOutput {
+    
+    func onViewDidLoad() {
+        let configuration: HomeViewConfiguration = .init(dragAndDropOutput: self)
+        
+        view.setup(with: configuration)
+    }
     
     func onOpenDirectoryTap() {
         presentSelectDirectoryDialog()
@@ -40,6 +48,15 @@ extension HomePresenter: HomeInteractorOutput {
 
 // MARK: - Router - Presenter
 extension HomePresenter: HomeRouterOutput {
+    
+}
+
+extension HomePresenter: DragAndDropViewDelegate {
+    
+    func dragDropView(_ dragDropView: DragAndDropView, droppedFileWithURL URL: URL) {
+        selectedFolderURL = URL
+        view.setText(string: URL.path())
+    }
     
 }
 
@@ -59,6 +76,7 @@ private extension HomePresenter {
                 return
             }
             
+            selectedFolderURL = result
             let path = result.path()
             view.setText(string: path)
             

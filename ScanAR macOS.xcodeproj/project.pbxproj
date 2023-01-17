@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0CBC4F2976BA600031037E /* NSDraggingInfo+FilePathURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CBC4E2976BA600031037E /* NSDraggingInfo+FilePathURL.swift */; };
+		FA0CBC522976BA9D0031037E /* DragAndDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CBC512976BA9D0031037E /* DragAndDropView.swift */; };
+		FA0CBC542976BECB0031037E /* HomeViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0CBC532976BECB0031037E /* HomeViewConfiguration.swift */; };
 		FAA4FB0E290FDFAC00C0A436 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4FB0D290FDFAC00C0A436 /* AppDelegate.swift */; };
 		FAA4FB12290FDFAD00C0A436 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA4FB11290FDFAD00C0A436 /* Assets.xcassets */; };
 		FAA4FB15290FDFAD00C0A436 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA4FB13290FDFAD00C0A436 /* Main.storyboard */; };
@@ -34,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0CBC4E2976BA600031037E /* NSDraggingInfo+FilePathURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDraggingInfo+FilePathURL.swift"; sourceTree = "<group>"; };
+		FA0CBC512976BA9D0031037E /* DragAndDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropView.swift; sourceTree = "<group>"; };
+		FA0CBC532976BECB0031037E /* HomeViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewConfiguration.swift; sourceTree = "<group>"; };
 		FAA4FB0A290FDFAC00C0A436 /* ScanAR macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ScanAR macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA4FB0D290FDFAC00C0A436 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA4FB11290FDFAD00C0A436 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,9 +79,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0CBC4D2976BA520031037E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA0CBC4E2976BA600031037E /* NSDraggingInfo+FilePathURL.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA0CBC502976BA930031037E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA0CBC512976BA9D0031037E /* DragAndDropView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FA897A5D2975DC23006F3A59 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				FA0CBC532976BECB0031037E /* HomeViewConfiguration.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -125,6 +148,8 @@
 		FAFD85E829759D76000B439F /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FA0CBC502976BA930031037E /* Views */,
+				FA0CBC4D2976BA520031037E /* Extensions */,
 				FAFD860529759E35000B439F /* Base */,
 			);
 			path = Common;
@@ -320,16 +345,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0CBC4F2976BA600031037E /* NSDraggingInfo+FilePathURL.swift in Sources */,
 				FAFD85FB29759E12000B439F /* HomePresenter.swift in Sources */,
 				FAFD862229759E4C000B439F /* BaseInteractor.swift in Sources */,
 				FAFD862529759E4C000B439F /* BaseRouter.swift in Sources */,
 				FAA4FB0E290FDFAC00C0A436 /* AppDelegate.swift in Sources */,
 				FAFD860029759E12000B439F /* HomeInteractor.swift in Sources */,
+				FA0CBC522976BA9D0031037E /* DragAndDropView.swift in Sources */,
 				FAFD85F929759E12000B439F /* HomeModuleOutput.swift in Sources */,
 				FAFD862029759E4C000B439F /* BaseViewController.swift in Sources */,
 				FAFD85F829759E12000B439F /* HomeInteractorOutput.swift in Sources */,
 				FAFD86362975A6C9000B439F /* MainWindowController.swift in Sources */,
 				FAFD860229759E12000B439F /* HomeViewOutput.swift in Sources */,
+				FA0CBC542976BECB0031037E /* HomeViewConfiguration.swift in Sources */,
 				FAFD85FF29759E12000B439F /* HomeModuleInput.swift in Sources */,
 				FAFD862129759E4C000B439F /* BasePresenter.swift in Sources */,
 				FAFD861029759E40000B439F /* Logger.swift in Sources */,

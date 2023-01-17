@@ -696,7 +696,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="135"/>
+            <point key="canvasLocation" x="75" y="175"/>
         </scene>
     </scenes>
 </document>

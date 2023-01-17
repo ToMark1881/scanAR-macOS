@@ -7,5 +7,6 @@
 //
 
 protocol HomeViewOutput: AnyObject {
+    func onViewDidLoad()
     func onOpenDirectoryTap()
 }
