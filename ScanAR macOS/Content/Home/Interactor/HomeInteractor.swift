@@ -8,69 +8,114 @@
 
 import Foundation
 import RealityKit
+import SceneKit.ModelIO
 
 typealias ProcessingQuality = PhotogrammetrySession.Request.Detail
+typealias Model = ModelEntity
+typealias SessionRequest = PhotogrammetrySession.Request
+typealias ModelAsset = MDLAsset
 
 final class HomeInteractor: BaseInteractor {
     
     weak var output: HomeInteractorOutput!
     
     var directoryURL: URL?
-    var processingQuality: ProcessingQuality = .reduced
+    var processingQuality: ProcessingQuality = .preview
     
 }
 
 extension HomeInteractor: HomeInteractorInput {
     
     func generatePreview() {
-        createModel(with: .preview)
+        guard let inputURL = directoryURL  else {
+            return
+        }
+        
+        do {
+            let session = try PhotogrammetrySession(input: inputURL,
+                                                    configuration: PhotogrammetrySession.Configuration())
+            
+            try session.process(requests: [
+                .modelEntity(detail: .preview)
+            ])
+            
+            try performSessionOutputs(session)
+        } catch let error {
+            output.didReceiveError(error)
+            print(error.localizedDescription)
+        }
     }
     
     func createModel() {
-        createModel(with: processingQuality)
+        guard let inputURL = directoryURL,
+              let outputURL = outputURL else {
+            return
+        }
+        
+        do {
+            let session = try PhotogrammetrySession(input: inputURL,
+                                                    configuration: PhotogrammetrySession.Configuration())
+            
+            try session.process(requests: [
+                .modelFile(url: outputURL,
+                           detail: processingQuality)
+            ])
+            
+            try performSessionOutputs(session)
+        } catch let error {
+            output.didReceiveError(error)
+            print(error.localizedDescription)
+        }
     }
     
 }
 
 private extension HomeInteractor {
     
-    func createModel(with quality: ProcessingQuality) {
+    var outputURL: URL? {
         guard let url = directoryURL,
               let outputURL = URL(string: url.absoluteString + "/model.usdz")  else {
-            return
+            return nil
         }
         
-        let configuration: PhotogrammetrySession.Configuration = .init()
-        do {
-            let session = try PhotogrammetrySession(input: url,
-                                                    configuration: configuration)
-            
-            
-            try session.process(requests: [
-                .modelFile(url: outputURL,
-                           detail: quality)
-            ])
-            
-            Task {
-                for try await output in session.outputs {
-                    switch output {
-                    case .requestProgress(let request, let fraction):
-                        print("Progress: \(fraction)")
-                    case .requestComplete(let request, let result):
-                        if case .modelFile(let url) = result {
-                            print("Result output at \(url)")
-                        }
-                    case .requestError(let request, let error):
-                        "Request \(request) get error \(error)"
-                    case .processingComplete:
-                        print("Completed!")
-                    default:
-                        break
+        return outputURL
+    }
+    
+    func performSessionOutputs(_ session: PhotogrammetrySession) throws {
+        Task {
+            for try await output in session.outputs {
+                switch output {
+                case .requestProgress(let request, let fraction):
+                    await MainActor.run {
+                        self.output.didUpdateProgress(fraction: fraction, for: request)
                     }
+                    print("Progress: \(fraction)")
+                    
+                case .requestComplete(let request, let result):
+                    await MainActor.run {
+                        switch result {
+                        case .modelFile(let url):
+                            self.output.didGenerateModel(with: url, for: request)
+                            print("Result output at \(url)")
+                            
+                        case .modelEntity(let model):
+                            self.output.didGeneratePreview(model: model, for: request)
+                            print("Preview model generated")
+                        default:
+                            break
+                        }
+                    }
+                    
+                case .requestError(let request, let error):
+                    self.output.didReceiveError(error)
+                    print("Request \(request) get error \(error)")
+                    
+                case .processingComplete:
+                    print("Completed!")
+                default:
+                    break
                 }
             }
-        } catch let error {
-            print(error)
         }
     }
     

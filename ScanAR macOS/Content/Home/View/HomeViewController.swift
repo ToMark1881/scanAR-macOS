@@ -7,12 +7,11 @@
 //
 
 import Cocoa
+import SceneKit
 
 final class HomeViewController: NSViewController {
     
     var output: HomeViewOutput!
-
-    @IBOutlet weak var label: NSTextField!
     
     @IBOutlet weak var reducedRadioButton: NSButton!
     @IBOutlet weak var mediumRadioButton: NSButton!
@@ -23,6 +22,12 @@ final class HomeViewController: NSViewController {
     
     @IBOutlet weak var generatePreviewButton: NSButton!
     @IBOutlet weak var createModelButton: NSButton!
+    
+    @IBOutlet weak var sceneView: SCNView!
+    
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
+    @IBOutlet weak var progressLabel: NSTextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,12 +39,28 @@ final class HomeViewController: NSViewController {
 
 extension HomeViewController: HomeViewInput {
     
-    func setText(string: String) {
-        changeMainText(string)
-    }
-    
     func setup(with configuration: HomeViewConfiguration) {
         dragAndDropView.delegate = configuration.dragAndDropOutput
+    }
+    
+    func setModelAsset(_ asset: ModelAsset) {
+        generatePreviewButton.isEnabled = true
+        createModelButton.isEnabled = true
+        
+        asset.loadTextures()
+        
+        let scene = SCNScene(mdlAsset: asset)
+        sceneView.scene = scene
+    }
+    
+    func showLoading() {
+        generatePreviewButton.isEnabled = false
+        createModelButton.isEnabled = false
+    }
+    
+    func updateProgress(_ value: Double) {
+        progressIndicator.doubleValue = value
+        progressLabel.stringValue = "\(Int(value).description)%"
     }
 
 }
@@ -73,10 +94,10 @@ private extension HomeViewController {
         output.onCreateModelTap()
     }
     
-    func changeMainText(_ text: String) {
-        self.label.stringValue = text
+    func setupUI() {
+        sceneView.autoenablesDefaultLighting = true
+        sceneView.showsStatistics = true
+        sceneView.allowsCameraControl = true
     }
-    
-    func setupUI() { }
     
 }

@@ -7,6 +7,9 @@
 //
 
 protocol HomeViewInput: BaseViewControllerProtocol {
-    func setText(string: String)
     func setup(with configuration: HomeViewConfiguration)
+    
+    func showLoading()
+    func updateProgress(_ value: Double)
+    func setModelAsset(_ asset: ModelAsset)
 }

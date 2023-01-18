@@ -17,8 +17,6 @@ final class HomePresenter: BasePresenter {
     
     weak var moduleOutput: HomeModuleOutput?
     
-    private var selectedFolderURL: URL?
-    
 }
 
 // MARK: - Module Input
@@ -36,11 +34,15 @@ extension HomePresenter: HomeViewOutput {
     }
     
     func onGeneratePreviewTap() {
+        view.showLoading()
         
+        interactor.generatePreview()
     }
     
     func onCreateModelTap() {
+        view.showLoading()
         
+        interactor.createModel()
     }
     
     func onReducedQualitySelect() {
@@ -64,6 +66,24 @@ extension HomePresenter: HomeViewOutput {
 // MARK: - Interactor - Presenter
 extension HomePresenter: HomeInteractorOutput {
     
+    func didUpdateProgress(fraction: Double, for request: SessionRequest) {
+        view.updateProgress(fraction * 100)
+    }
+    
+    func didGeneratePreview(model: Model, for request: SessionRequest) {
+        
+    }
+    
+    func didGenerateModel(with outputURL: URL, for request: SessionRequest) {
+        let asset = ModelAsset(url: outputURL)
+        
+        view.setModelAsset(asset)
+    }
+    
+    func didReceiveError(_ error: Error) {
+        
+    }
+    
 }
 
 // MARK: - Router - Presenter
@@ -74,8 +94,7 @@ extension HomePresenter: HomeRouterOutput {
 extension HomePresenter: DragAndDropViewDelegate {
     
     func dragDropView(_ dragDropView: DragAndDropView, droppedFileWithURL URL: URL) {
-        selectedFolderURL = URL
-        view.setText(string: URL.path())
+        interactor.directoryURL = URL
     }
     
     func dragDropView(didTapOnOpenDirectory dragDropView: DragAndDropView) {
@@ -100,9 +119,7 @@ private extension HomePresenter {
                 return
             }
             
-            selectedFolderURL = result
-            let path = result.path()
-            view.setText(string: path)
+            interactor.directoryURL = result
             
         default:
             break

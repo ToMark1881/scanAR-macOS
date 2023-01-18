@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="bU7-R8-ocO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
+        <plugIn identifier="com.apple.SceneKitIBPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -9,12 +10,12 @@
         <scene sceneID="PEd-7d-5j0">
             <objects>
                 <viewController title="Home" storyboardIdentifier="HomeViewController" id="bU7-R8-ocO" customClass="HomeViewController" customModule="ScanAR_macOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="tOy-S4-hL0">
+                    <view key="view" wantsLayer="YES" id="tOy-S4-hL0">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="800"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <box horizontalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="wGV-KG-9HM">
-                                <rect key="frame" x="238" y="20" width="5" height="760"/>
+                                <rect key="frame" x="238" y="0.0" width="5" height="800"/>
                             </box>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="X6D-gR-INp">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="800"/>
@@ -157,24 +158,55 @@
                                     <constraint firstItem="HvU-ip-oSh" firstAttribute="top" secondItem="Tn0-fh-Pia" secondAttribute="bottom" constant="12" id="wFA-4p-BlU"/>
                                 </constraints>
                             </customView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Q2s-G5-Xq1">
-                                <rect key="frame" x="257" y="392" width="90" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Hello, ScanAR" placeholderString="Text placeholder" id="v8h-Js-HeF">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <sceneView allowsCameraControl="YES" preferredRenderingAPI="1" translatesAutoresizingMaskIntoConstraints="NO" id="cJS-f8-qaM">
+                                <rect key="frame" x="241" y="0.0" width="759" height="800"/>
+                                <color key="backgroundColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </sceneView>
+                            <box translatesAutoresizingMaskIntoConstraints="NO" id="9TY-wL-tMr">
+                                <rect key="frame" x="262" y="20" width="717" height="44"/>
+                                <view key="contentView" id="whd-KI-7bD">
+                                    <rect key="frame" x="4" y="5" width="709" height="24"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <progressIndicator maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="GLN-b2-mXP">
+                                            <rect key="frame" x="16" y="2" width="640" height="20"/>
+                                        </progressIndicator>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rnp-4R-a7J">
+                                            <rect key="frame" x="670" y="4" width="25" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" title="0%" id="hbp-Yv-HME">
+                                                <font key="font" usesAppearanceFont="YES"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rnp-4R-a7J" firstAttribute="leading" secondItem="GLN-b2-mXP" secondAttribute="trailing" constant="16" id="4hG-3Q-9WE"/>
+                                        <constraint firstAttribute="trailing" secondItem="rnp-4R-a7J" secondAttribute="trailing" constant="16" id="Gcg-BU-YMi"/>
+                                        <constraint firstItem="GLN-b2-mXP" firstAttribute="leading" secondItem="whd-KI-7bD" secondAttribute="leading" constant="16" id="WoQ-mc-3WV"/>
+                                        <constraint firstItem="rnp-4R-a7J" firstAttribute="centerY" secondItem="whd-KI-7bD" secondAttribute="centerY" id="boX-0D-cpV"/>
+                                        <constraint firstItem="GLN-b2-mXP" firstAttribute="centerY" secondItem="whd-KI-7bD" secondAttribute="centerY" id="xOc-xJ-Zej"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6eF-gm-RfN"/>
+                                </constraints>
+                            </box>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="cJS-f8-qaM" firstAttribute="leading" secondItem="wGV-KG-9HM" secondAttribute="trailing" id="EGB-nL-qPl"/>
+                            <constraint firstItem="cJS-f8-qaM" firstAttribute="top" secondItem="tOy-S4-hL0" secondAttribute="top" id="Hn9-I5-Y3s"/>
                             <constraint firstItem="X6D-gR-INp" firstAttribute="top" secondItem="tOy-S4-hL0" secondAttribute="top" id="Vdc-me-nye"/>
                             <constraint firstItem="wGV-KG-9HM" firstAttribute="leading" secondItem="X6D-gR-INp" secondAttribute="trailing" id="cEb-OR-846"/>
-                            <constraint firstItem="Q2s-G5-Xq1" firstAttribute="leading" secondItem="wGV-KG-9HM" secondAttribute="trailing" constant="18" id="iJf-ow-kzt"/>
+                            <constraint firstAttribute="bottom" secondItem="9TY-wL-tMr" secondAttribute="bottom" constant="24" id="gcd-wW-Upk"/>
+                            <constraint firstAttribute="trailing" secondItem="9TY-wL-tMr" secondAttribute="trailing" constant="24" id="kxc-ZA-9oc"/>
                             <constraint firstAttribute="bottom" secondItem="X6D-gR-INp" secondAttribute="bottom" id="mnn-V6-ifm"/>
+                            <constraint firstAttribute="bottom" secondItem="cJS-f8-qaM" secondAttribute="bottom" id="nVg-Gr-dD7"/>
                             <constraint firstItem="X6D-gR-INp" firstAttribute="leading" secondItem="tOy-S4-hL0" secondAttribute="leading" id="pkf-jq-fCX"/>
-                            <constraint firstAttribute="bottom" secondItem="wGV-KG-9HM" secondAttribute="bottom" constant="20" id="wWf-E1-bQd"/>
-                            <constraint firstItem="Q2s-G5-Xq1" firstAttribute="centerY" secondItem="tOy-S4-hL0" secondAttribute="centerY" id="wsC-K2-Fjg"/>
-                            <constraint firstItem="wGV-KG-9HM" firstAttribute="top" secondItem="tOy-S4-hL0" secondAttribute="top" constant="20" id="zJd-u2-nLZ"/>
+                            <constraint firstItem="9TY-wL-tMr" firstAttribute="leading" secondItem="wGV-KG-9HM" secondAttribute="trailing" constant="24" id="qjD-61-noh"/>
+                            <constraint firstAttribute="trailing" secondItem="cJS-f8-qaM" secondAttribute="trailing" id="upg-Zm-Ncn"/>
+                            <constraint firstAttribute="bottom" secondItem="wGV-KG-9HM" secondAttribute="bottom" id="wWf-E1-bQd"/>
+                            <constraint firstItem="wGV-KG-9HM" firstAttribute="top" secondItem="tOy-S4-hL0" secondAttribute="top" id="zJd-u2-nLZ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -182,10 +214,12 @@
                         <outlet property="dragAndDropView" destination="a1t-tG-bX6" id="h6I-rd-bQY"/>
                         <outlet property="fullRadioButton" destination="YMH-4g-scY" id="aHV-pK-RIe"/>
                         <outlet property="generatePreviewButton" destination="HvU-ip-oSh" id="gwL-gJ-s3r"/>
-                        <outlet property="label" destination="Q2s-G5-Xq1" id="6db-Oc-7Yv"/>
                         <outlet property="mediumRadioButton" destination="rqE-sz-YyU" id="pfe-7S-k6Q"/>
+                        <outlet property="progressIndicator" destination="GLN-b2-mXP" id="0wx-gG-ZwL"/>
+                        <outlet property="progressLabel" destination="rnp-4R-a7J" id="Ra2-A6-bYV"/>
                         <outlet property="rawRadioButton" destination="0XA-fx-2jS" id="NcW-Su-jfP"/>
                         <outlet property="reducedRadioButton" destination="TOA-vc-6gQ" id="yTj-xV-2Zo"/>
+                        <outlet property="sceneView" destination="cJS-f8-qaM" id="0ia-No-iQX"/>
                     </connections>
                 </viewController>
                 <customObject id="9uD-mB-xHs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
