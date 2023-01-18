@@ -24,6 +24,7 @@ public final class DragAndDropView: NSView {
         super.init(coder: coder)
         
         registerForDraggedTypes([NSPasteboard.PasteboardType.URL])
+        addTapGesture()
     }
     
     public override init(frame frameRect: NSRect) {
@@ -38,7 +39,7 @@ public final class DragAndDropView: NSView {
         
         __NSRectFillUsingOperation(dirtyRect, NSCompositingOperation.sourceOver)
         
-        let grayColor = NSColor(deviceWhite: 1, alpha: highlight ? 1.0/4.0 : 1.0/8.0)
+        let grayColor = NSColor(deviceWhite: 1, alpha: highlight ? 0.75 : 0.5)
         grayColor.set()
         grayColor.setFill()
         
@@ -135,6 +136,16 @@ public final class DragAndDropView: NSView {
         return true
     }
     
+    fileprivate func addTapGesture() {
+        let tapGesture = NSClickGestureRecognizer(target: self, action: #selector(didTapOnDragAndDropView))
+        
+        self.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc fileprivate func didTapOnDragAndDropView(_ sender: NSClickGestureRecognizer) {
+        delegate?.dragDropView(didTapOnOpenDirectory: self)
+    }
+    
     public override func acceptsFirstMouse(for event: NSEvent?) -> Bool {
         return true
     }
@@ -144,6 +155,8 @@ public final class DragAndDropView: NSView {
 protocol DragAndDropViewDelegate: AnyObject {
     func dragDropView(_ dragDropView: DragAndDropView, droppedFileWithURL URL: URL)
     func dragDropView(_ dragDropView: DragAndDropView, droppedFilesWithURLs URLs: [URL])
+    
+    func dragDropView(didTapOnOpenDirectory dragDropView: DragAndDropView)
 }
 
 extension DragAndDropViewDelegate {

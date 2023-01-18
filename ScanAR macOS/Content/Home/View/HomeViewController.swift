@@ -14,14 +14,15 @@ final class HomeViewController: NSViewController {
 
     @IBOutlet weak var label: NSTextField!
     
-    @IBOutlet weak var previewRadioButton: NSButton!
-    @IBOutlet weak var lowRadioButton: NSButton!
+    @IBOutlet weak var reducedRadioButton: NSButton!
     @IBOutlet weak var mediumRadioButton: NSButton!
-    @IBOutlet weak var highRadioButton: NSButton!
-    @IBOutlet weak var selectDirectoryButton: NSButton!
+    @IBOutlet weak var fullRadioButton: NSButton!
+    @IBOutlet weak var rawRadioButton: NSButton!
     
     @IBOutlet weak var dragAndDropView: DragAndDropView!
     
+    @IBOutlet weak var generatePreviewButton: NSButton!
+    @IBOutlet weak var createModelButton: NSButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,25 +48,29 @@ private extension HomeViewController {
     
     @IBAction func didChangeRadioButtonValue(_ sender: NSButton) {
         switch sender {
-        case previewRadioButton:
-            changeMainText("preview")
-            
-        case lowRadioButton:
-            changeMainText("low")
+        case reducedRadioButton:
+            output.onReducedQualitySelect()
             
         case mediumRadioButton:
-            changeMainText("medium")
+            output.onMediumQualitySelect()
             
-        case highRadioButton:
-            changeMainText("high")
+        case fullRadioButton:
+            output.onFullQualitySelect()
+            
+        case rawRadioButton:
+            output.onRawQualitySelect()
             
         default:
             break
         }
     }
     
-    @IBAction func didTapOnSelectDirectoryButton(_ sender: Any) {
-        output.onOpenDirectoryTap()
+    @IBAction func didTapOnGeneratePreviewButton(_ sender: Any) {
+        output.onGeneratePreviewTap()
+    }
+    
+    @IBAction func didTapOnCreateModelButton(_ sender: Any) {
+        output.onCreateModelTap()
     }
     
     func changeMainText(_ text: String) {

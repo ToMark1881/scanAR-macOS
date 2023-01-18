@@ -8,5 +8,11 @@
 
 protocol HomeViewOutput: AnyObject {
     func onViewDidLoad()
-    func onOpenDirectoryTap()
+    func onGeneratePreviewTap()
+    func onCreateModelTap()
+    
+    func onReducedQualitySelect()
+    func onMediumQualitySelect()
+    func onFullQualitySelect()
+    func onRawQualitySelect()
 }

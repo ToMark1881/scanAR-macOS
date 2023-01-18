@@ -35,8 +35,28 @@ extension HomePresenter: HomeViewOutput {
         view.setup(with: configuration)
     }
     
-    func onOpenDirectoryTap() {
-        presentSelectDirectoryDialog()
+    func onGeneratePreviewTap() {
+        
+    }
+    
+    func onCreateModelTap() {
+        
+    }
+    
+    func onReducedQualitySelect() {
+        
+    }
+    
+    func onMediumQualitySelect() {
+        
+    }
+    
+    func onFullQualitySelect() {
+        
+    }
+    
+    func onRawQualitySelect() {
+        
     }
     
 }
@@ -56,6 +76,10 @@ extension HomePresenter: DragAndDropViewDelegate {
     func dragDropView(_ dragDropView: DragAndDropView, droppedFileWithURL URL: URL) {
         selectedFolderURL = URL
         view.setText(string: URL.path())
+    }
+    
+    func dragDropView(didTapOnOpenDirectory dragDropView: DragAndDropView) {
+        presentSelectDirectoryDialog()
     }
     
 }
