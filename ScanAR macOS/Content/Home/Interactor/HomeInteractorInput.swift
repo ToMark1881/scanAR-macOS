@@ -9,5 +9,9 @@
 import Foundation
 
 protocol HomeInteractorInput: AnyObject {
-        
+    var directoryURL: URL? { get set }
+    var processingQuality: ProcessingQuality { get set }
+    
+    func generatePreview()
+    func createModel()
 }

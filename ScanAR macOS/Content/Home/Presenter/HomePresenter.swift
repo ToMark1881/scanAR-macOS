@@ -44,19 +44,19 @@ extension HomePresenter: HomeViewOutput {
     }
     
     func onReducedQualitySelect() {
-        
+        interactor.processingQuality = .reduced
     }
     
     func onMediumQualitySelect() {
-        
+        interactor.processingQuality = .medium
     }
     
     func onFullQualitySelect() {
-        
+        interactor.processingQuality = .full
     }
     
     func onRawQualitySelect() {
-        
+        interactor.processingQuality = .raw
     }
     
 }
