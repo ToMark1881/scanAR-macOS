@@ -6,7 +6,7 @@
 //  Created by Vladyslav Vdovychenko on 16.01.2023.
 //
 
-import Foundation
+import Cocoa
 
 protocol HomeInteractorInput: AnyObject {
     var directoryURL: URL? { get set }
@@ -14,4 +14,5 @@ protocol HomeInteractorInput: AnyObject {
     
     func generatePreview()
     func createModel()
+    func shareModel(from sender: NSView)
 }

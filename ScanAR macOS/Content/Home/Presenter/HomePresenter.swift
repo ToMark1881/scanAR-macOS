@@ -45,6 +45,10 @@ extension HomePresenter: HomeViewOutput {
         interactor.createModel()
     }
     
+    func onShareFileTap(sender: NSView) {
+        interactor.shareModel(from: sender)
+    }
+    
     func onReducedQualitySelect() {
         interactor.processingQuality = .reduced
     }
@@ -70,9 +74,7 @@ extension HomePresenter: HomeInteractorOutput {
         view.updateProgress(fraction * 100)
     }
     
-    func didGeneratePreview(model: Model, for request: SessionRequest) {
-        
-    }
+    func didGeneratePreview(model: Model, for request: SessionRequest) { }
     
     func didGenerateModel(with outputURL: URL, for request: SessionRequest) {
         let asset = ModelAsset(url: outputURL)

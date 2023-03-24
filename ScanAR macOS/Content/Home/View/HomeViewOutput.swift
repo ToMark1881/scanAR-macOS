@@ -6,6 +6,8 @@
 //  Created by Vladyslav Vdovychenko on 16.01.2023.
 //
 
+import Cocoa
+
 protocol HomeViewOutput: AnyObject {
     func onViewDidLoad()
     func onGeneratePreviewTap()
@@ -15,4 +17,6 @@ protocol HomeViewOutput: AnyObject {
     func onMediumQualitySelect()
     func onFullQualitySelect()
     func onRawQualitySelect()
+    
+    func onShareFileTap(sender: NSView)
 }

@@ -18,6 +18,7 @@ final class HomeViewController: NSViewController {
     @IBOutlet weak var fullRadioButton: NSButton!
     @IBOutlet weak var rawRadioButton: NSButton!
     
+    @IBOutlet weak var shareFileButton: NSButton!
     @IBOutlet weak var dragAndDropView: DragAndDropView!
     
     @IBOutlet weak var generatePreviewButton: NSButton!
@@ -92,6 +93,10 @@ private extension HomeViewController {
     
     @IBAction func didTapOnCreateModelButton(_ sender: Any) {
         output.onCreateModelTap()
+    }
+    
+    @IBAction func didTapOnShareFileButton(_ sender: NSButton) {
+        output.onShareFileTap(sender: sender)
     }
     
     func setupUI() {

@@ -35,9 +35,11 @@ extension HomeInteractor: HomeInteractorInput {
             let session = try PhotogrammetrySession(input: inputURL,
                                                     configuration: PhotogrammetrySession.Configuration())
             
-            try session.process(requests: [
-                .modelEntity(detail: .preview)
-            ])
+            let temporaryDirectory = URL(fileURLWithPath: NSTemporaryDirectory(),
+                                         isDirectory: true).appendingPathComponent("previewModel.usdz")
+            
+            let request = PhotogrammetrySession.Request.modelFile(url: temporaryDirectory, detail: .preview)
+            try session.process(requests: [request])
             
             try performSessionOutputs(session)
         } catch let error {
@@ -56,16 +58,23 @@ extension HomeInteractor: HomeInteractorInput {
             let session = try PhotogrammetrySession(input: inputURL,
                                                     configuration: PhotogrammetrySession.Configuration())
             
-            try session.process(requests: [
-                .modelFile(url: outputURL,
-                           detail: processingQuality)
-            ])
+            let request = PhotogrammetrySession.Request.modelFile(url: outputURL, detail: processingQuality)
+            try session.process(requests: [request])
             
             try performSessionOutputs(session)
         } catch let error {
             output.didReceiveError(error)
             print(error.localizedDescription)
         }
+    }
+    
+    func shareModel(from sender: NSView) {
+        guard let url = outputURL else {
+            return
+        }
+        
+        let sharingPicker = NSSharingServicePicker(items: [url])
+        sharingPicker.show(relativeTo: .zero, of: sender, preferredEdge: .minY)
     }
     
 }

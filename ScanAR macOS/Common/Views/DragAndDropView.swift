@@ -45,7 +45,7 @@ public final class DragAndDropView: NSView {
         
         let bounds = self.bounds
         let size = min(bounds.size.width - 8.0, bounds.size.height - 8.0);
-        let width =  max(2.0, size / 32.0)
+        let width =  max(2.0, size / 64.0)
         let frame = NSMakeRect((bounds.size.width-size)/2.0, (bounds.size.height-size)/2.0, size, size)
         
         NSBezierPath.defaultLineWidth = width
@@ -58,11 +58,11 @@ public final class DragAndDropView: NSView {
         
         // draw arrow
         let arrowPath = NSBezierPath()
-        let baseWidth = size / 8.0
-        let baseHeight = size / 8.0
+        let baseWidth = size / 12
+        let baseHeight = size / 12
         let arrowWidth = baseWidth * 2.0
         let pointHeight = baseHeight * 3.0
-        let offset = -size / 8.0
+        let offset = -size / 12
         
         arrowPath.move(to: NSMakePoint(bounds.size.width/2.0 - baseWidth, bounds.size.height/2.0 + baseHeight - offset))
         
