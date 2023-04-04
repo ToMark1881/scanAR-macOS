@@ -82,12 +82,11 @@ extension HomeInteractor: HomeInteractorInput {
 private extension HomeInteractor {
     
     var outputURL: URL? {
-        guard let url = directoryURL,
-              let outputURL = URL(string: url.absoluteString + "/model.usdz")  else {
+        guard let url = directoryURL else {
             return nil
         }
         
-        return outputURL
+        return url.appendingPathComponent("model.usdz")
     }
     
     func performSessionOutputs(_ session: PhotogrammetrySession) throws {
@@ -121,8 +120,21 @@ private extension HomeInteractor {
                     
                 case .processingComplete:
                     print("Completed!")
+                    
+                case .inputComplete:  // Data ingestion has finished.
+                    print("Data ingestion is complete.  Beginning processing...")
+                    
+                case .invalidSample(let id, let reason):
+                    print("Invalid Sample! id=\(id)  reason=\"\(reason)\"")
+                    
+                case .skippedSample(let id):
+                    print("Sample id=\(id) was skipped by processing.")
+                    
+                case .automaticDownsampling:
+                    print("Automatic downsampling was applied!")
+                    
                 default:
-                    break
+                    print("Output: unhandled message: \(output.localizedDescription)")
                 }
             }
         }
